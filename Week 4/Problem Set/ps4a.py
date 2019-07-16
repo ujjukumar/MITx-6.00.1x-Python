@@ -195,12 +195,12 @@ def calculateHandlen(hand):
     returns: integer
     """
     # TO DO... <-- Remove this comment when you code this function
-    word3 = ''
-    for x in hand.keys():
-        for n in range(hand[x]):
-            while hand[x] > 0:
-                word3 +=x
-    return len(word3)
+    length = 0
+    
+    for letter in hand:
+        length += hand[letter]
+    
+    return length
 
 
 def playHand(hand, wordList, n):
@@ -255,7 +255,7 @@ def playHand(hand, wordList, n):
                 hand = updateHand(hand, word)
 
     # Game is over (user entered a '.' or ran out of letters), so tell user the total score
-    print('Run out of letters. Total score: ', score_final, 'points.')
+    return 'Run out of letters. Total score: ', score_final, 'points.'
 
 #
 # Problem #5: Playing a game
